@@ -26,6 +26,14 @@ def ipv4_to_binary(number):
         binary_num.append(decimal_to_binary(octet))
     return ''.join(binary_num)
 
+def binary_ipv4_to_ipv4(number):
+    """ Converts a dotted IPv4 in binary to its decimal representation """
+    dec_num = []
+    # Split the number into its 4 octet's and convert the numbers
+    for octet in number.split('.'):
+        dec_num.append(binary_to_decimal(octet))
+    return '.'.join(str(x) for x in dec_num)
+
 
 def convert_file(file_path=None, input_type=None):
     """
@@ -47,6 +55,8 @@ def convert_file(file_path=None, input_type=None):
                 output_number = binary_to_decimal(line)
             elif input_type == 'ip':
                 output_number = ipv4_to_binary(line)
+            elif input_type == 'ip_bin':
+                output_number = binary_ipv4_to_ipv4(line)
             
             print('{unconverted_number} = {output}'.format(unconverted_number=line,
                                                            output=output_number))
