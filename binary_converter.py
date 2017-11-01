@@ -24,7 +24,7 @@ def ipv4_to_binary(number):
     # Split the number into its 4 octet's and convert the numbers
     for octet in number.split('.'):
         binary_num.append(decimal_to_binary(octet))
-    return ''.join(binary_num)
+    return '.'.join(binary_num)
 
 def binary_ipv4_to_ipv4(number):
     """ Converts a dotted IPv4 in binary to its decimal representation """
