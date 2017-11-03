@@ -76,8 +76,8 @@ if __name__ == '__main__':
         file_path_arg = sys.argv[1]
         input_type_arg = sys.argv[2]
     except IndexError:
-        print('Du skal angive enten en sti til en fil der kan køres igennem '
-              'som første argument')
+        print('You have to provide a path to a txt-file af first args. The '
+              'second args has to be a str: dec|bin|ip|ip_bin')
 
     # Define if we only need to convert a single number, or a whole file
 
